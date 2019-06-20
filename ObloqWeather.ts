@@ -1,3 +1,4 @@
+
 /*！
  * @file Obloq/Obloq.ts
  * @brief DFRobot's obloq makecode library.
@@ -306,7 +307,7 @@ namespace ObloqWeather {
     //% receive.fieldEditor="gridpicker" receive.fieldOptions.columns=3
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% blockId=Obloq_http_setup
-    //% block="Obloq setup http | Pin set: | receiving data (green wire): %receive| sending data (blue wire): %send | Wi-Fi: | name: %SSID| password: %PASSWORD| start connection"
+    //% block="Obloq setup http | Pin set: | Receive data (green wire): %receive| Send data (blue wire): %send | Wi-Fi: | Name: %SSID| Password: %PASSWORD| Start connection"
     export function Obloq_http_setup(/*serial*/receive: SerialPin, send: SerialPin,
                                      /*wifi*/SSID: string, PASSWORD: string
     ):
@@ -411,7 +412,7 @@ namespace ObloqWeather {
     }
     //% weight=80
     //% blockId=Obloq_Weather_getWeather
-    //% block="get weather"
+    //% block="Get weather"
     export function get_weather(): string {
         let city = get_city();
         let ret = get_request(city, "weather");
@@ -420,7 +421,7 @@ namespace ObloqWeather {
     /*
     //% weight=80
     //% blockId=Obloq_Weather_getRainfall
-    //% block="get rainfall"
+    //% block="Get rainfall"
     export function get_rainfall(): string {
         let city = get_city();
         let ret = get_request(city, "rainfall");
@@ -431,7 +432,7 @@ namespace ObloqWeather {
 
     //% weight=80
     //% blockId=Obloq_Weather_getTemperature
-    //% block="get temperature"
+    //% block="Get temperature"
     export function get_temperature(): string {
         let city = get_city();
         let ret = get_request(city, "temp_high/temp_low")
@@ -440,7 +441,7 @@ namespace ObloqWeather {
 
     //% weight=80
     //% blockId=Obloq_Weather_getHumidity
-    //% block="get humidity"
+    //% block="Get humidity"
     export function get_humidity(): string {
         let city = get_city();
         let ret = get_request(city, "humi_high/humi_low")
@@ -1007,3 +1008,4 @@ namespace ObloqWeather {
         control.onEvent(<number>32, <number>1, Obloq_serial_recevice); // register handler
     }
 } 
+  
