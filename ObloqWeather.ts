@@ -727,12 +727,15 @@ namespace ObloqWeather {
         while (OBLOQ_BOOL_TYPE_IS_TRUE) {
             basic.pause(100)
             if (OBLOQ_ANSWER_CMD == "200") {//http请求成功
+                OBLOQ_ANSWER_CMD = "";
                 return OBLOQ_ANSWER_CONTENT //返回消息
             } else if (OBLOQ_ANSWER_CMD == "-1") {//获取数据失败
                 Obloq_http_wrong_animation("requestFailed")
+                OBLOQ_ANSWER_CMD = ""
                 return OBLOQ_STR_TYPE_IS_NONE
             } else if (OBLOQ_ANSWER_CMD == "1") {//http请求字段错误
                 Obloq_http_wrong_animation("requestFailed")
+                OBLOQ_ANSWER_CMD = ""
                 return OBLOQ_STR_TYPE_IS_NONE
             }
 
